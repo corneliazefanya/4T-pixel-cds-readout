@@ -62,9 +62,9 @@ The 14,100 e⁻ figure depends on the definition: error against the small-signal
 
 A DC source `vos` in series with the gate of Msf stands in for pixel-to-pixel Vth variation. V_R and V_S shift with nearly identical slopes (0.882 and 0.883), so the offset appears in both samples and cancels in V_R − V_S.
 
-![Change of V_R, V_S, V_CDS relative to V_os = 0](images/06a_offset_delta.png)
-![V_R and V_S vs V_os](images/06c_vr_vs_absolute.png)
-![V_CDS vs V_os (zoomed)](images/06b_vcds_zoom.png)
+![Change of V_R, V_S, V_CDS relative to V_os = 0](images/07a_offset_delta.png)
+![V_R and V_S vs V_os](images/07c_vr_vs_absolute.png)
+![V_CDS vs V_os (zoomed)](images/07b_vcds_zoom.png)
 
 *The V_CDS change of about 40 µV is near the resolution of the result table (4 digits, about 10 µV), so read it as roughly 1 e⁻, not as a precise number. The first plot shows measured differences for all three signals; V_CDS is data, not a reference line.*
 
