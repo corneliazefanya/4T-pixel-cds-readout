@@ -43,7 +43,7 @@ Charge injection: Q = Iph · (PW + (tr + tf) / 2). With Iph = 0.5 nA, PW = 1 µs
 
 RST (1 to 2 µs), SHR (3 to 4 µs, V1 sampled on the falling edge), charge transfer (5 to 6 µs), SHS (7 to 8 µs, V2 sampled on the falling edge). SEL is held at a constant 2.5 V.
 
-![transient waveforms and timing](images/04_timing_waveforms.png)
+![transient waveforms and timing](images/05_timing_waveforms.png)
 
 Read V_CDS after 8 µs. Between 3 and 7 µs, V_S still holds its initial operating-point value, so the V_CDS trace there is not a signal.
 
@@ -51,8 +51,8 @@ Read V_CDS after 8 µs. Between 3 and 7 µs, V_S still holds its initial operati
 
 `ne` swept from 0 to 20,000 with vos = 0. CG is the slope of V_CDS vs N_e, not V_CDS / N_e at a single point, because there is a small offset at N_e = 0 (1.74 mV). Gain compresses slightly at large signal (40.3 µV/e⁻ for N_e ≤ 2000, 38.5 µV/e⁻ for 15,000 to 20,000). The suspected causes are voltage-dependent C_FD and a small drop in SF gain; this was not isolated.
 
-![V_CDS vs N_e with linear fit](images/05a_vcds_vs_ne.png)
-![Linearity error vs N_e](images/05b_linearity_error.png)
+![V_CDS vs N_e with linear fit](images/06a_vcds_vs_ne.png)
+![Linearity error vs N_e](images/06b_linearity_error.png)
 
 *Linearity error is measured against the small-signal fit (N_e ≤ 1000), normalized to V_CDS at N_e = 20,000. N_max is interpolated between only two points (10,000 and 15,000 e⁻), with an ideal column current source.*
 
@@ -74,7 +74,7 @@ This is a deterministic test (one offset per run), not a Monte Carlo FPN simulat
 
 With an NMOS reset switch, FD follows rst_hi − Vth until the gate is high enough. At rst_hi = 1.8 V and 2.0 V the reset is soft (V_FD = 1.451 V and 1.624 V). From 2.2 V it is hard, with a plateau near 1.76 V. FD sits about 36 to 40 mV below vrst after reset; the suspected cause is clock feedthrough and charge injection from Mrst (hypothesis, not isolated).
 
-![V_FD after reset vs RST high level](images/07_reset_sweep.png)
+![V_FD after reset vs RST high level](images/08_reset_sweep.png)
 
 *2.2 V is the first measured point that is already a hard reset. The 2.1 V point was not run, so the knee (about 2.17 V by estimate) lies somewhere between 2.0 and 2.2 V.*
 
