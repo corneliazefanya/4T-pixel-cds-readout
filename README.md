@@ -35,8 +35,9 @@ Hand calculations and simulation agree within 1% for C_FD,eff, conversion gain, 
 Charge injection: Q = Iph · (PW + (tr + tf) / 2). With Iph = 0.5 nA, PW = 1 µs, tr = tf = 10 ns, Q = 0.505 fC, about 3150 e⁻. The sweep variable `ne` sets Iph = ne · q / (tpw + 10 ns).
 
 ![pixel_4T schematic](images/01_pixel_4T_schematic.png)
-![column bias and CDS readout](images/02_column_bias_cds_readout.png)
-![testbench](images/03_testbench.png)
+![column bias and CDS readout](images/02_column_bias.png)
+![CDS readout](images/03_CDS_readout.png)
+![testbench](images/04_testbench.png)
 
 ## Timing
 
