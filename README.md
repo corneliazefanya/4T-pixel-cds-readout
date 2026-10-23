@@ -68,11 +68,9 @@ A DC source `vos` in series with the gate of Msf stands in for pixel-to-pixel Vt
 
 *The V_CDS change of about 40 µV is near the resolution of the result table (4 digits, about 10 µV), so read it as roughly 1 e⁻, not as a precise number. The first plot shows measured differences for all three signals; V_CDS is data, not a reference line.*
 
-This is a deterministic test (one offset per run), not a Monte Carlo FPN simulation.
-
 ### Reset
 
-With an NMOS reset switch, FD follows rst_hi − Vth until the gate is high enough. At rst_hi = 1.8 V and 2.0 V the reset is soft (V_FD = 1.451 V and 1.624 V). From 2.2 V it is hard, with a plateau near 1.76 V. FD sits about 36 to 40 mV below vrst after reset; the suspected cause is clock feedthrough and charge injection from Mrst (hypothesis, not isolated).
+With an NMOS reset switch, FD follows rst_hi − Vth until the gate is high enough. At rst_hi = 1.8 V and 2.0 V the reset is soft (V_FD = 1.451 V and 1.624 V). From 2.2 V it is hard, with a plateau near 1.76 V. FD sits about 36 to 40 mV below vrst after reset; the suspected cause is clock feedthrough and charge injection from Mrst.
 
 ![V_FD after reset vs RST high level](images/08_reset_sweep.png)
 
