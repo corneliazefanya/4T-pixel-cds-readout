@@ -2,7 +2,7 @@
 
 A schematic-level characterization study of a 4T CMOS image sensor pixel readout chain with correlated double sampling (CDS), built in Cadence Virtuoso and simulated with Spectre on the gpdk045 PDK (nmos2v, 1.8 V devices).
 
-**Scope in one line:** this is a readout-chain study. The photodiode and transfer gate are replaced by an ideal charge-injection current source, the column bias is an ideal current source, and the subtractor is ideal. Noise analysis, dynamic range, and a real column current source are not done yet (see [Limitations](#limitations)).
+**Scope in one line:** this is a readout-chain study. The photodiode and transfer gate are replaced by an ideal charge-injection current source, the column bias is an ideal current source, and the subtractor is ideal. Noise analysis, dynamic range, and a real column current source are not done yet (see [Limitations](#limitations)). Because the transfer gate (Mtx) is not modeled, the simulated circuit is functionally a 3T-style readout with ideal charge transfer; “4T” refers to the pixel architecture this study targets.
 
 ## Results
 
@@ -51,7 +51,7 @@ Read V_CDS after 8 µs. Between 3 and 7 µs, V_S still holds its initial operati
 
 ### Conversion gain and linearity (charge sweep)
 
-`ne` swept from 0 to 20,000 with vos = 0. CG is the slope of V_CDS vs N_e, not V_CDS / N_e at a single point, because there is a small offset at N_e = 0 (1.74 mV). Gain compresses slightly at large signal (40.3 µV/e⁻ for N_e ≤ 2000, 38.5 µV/e⁻ for 15,000 to 20,000). The suspected causes are voltage-dependent C_FD and a small drop in SF gain; this was not isolated.
+`ne` swept from 0 to 20,000 with vos = 0. CG is the slope of V_CDS vs N_e, not V_CDS / N_e at a single point, because there is a small offset at N_e = 0 (1.74 mV). Gain compresses slightly at large signal (40.3 µV/e⁻ for N_e ≤ 1000, 38.5 µV/e⁻ for 15,000 to 20,000). The suspected causes are voltage-dependent C_FD and a small drop in SF gain; this was not isolated.
 
 ![V_CDS vs N_e with linear fit](images/06a_vcds_vs_ne.png)
 ![Linearity error vs N_e](images/06b_linearity_error.png)
@@ -80,7 +80,7 @@ With an NMOS reset switch, FD follows rst_hi − Vth until the gate is high enou
 
 ## Debugging note: SEL was compressing the signal
 
-The first sweep gave an effective gain of 0.66 to 0.74 and CG of 29.6 µV/e⁻, about 27% below the hand calculation, with gain that rose with signal. The cause was a design variable: `sel_hi` was 1.8 V At SEL = 1.8 V, Msel has only about 51 mV of overdrive, drops 55.7 mV, and passes only 0.51 of the signal from N1 to COL. At 2.5 V the drop is 5.36 mV and the gain is 0.994. After the fix, V_CDS / ΔV_FD = 0.898 and the Q sweep matches the hand calculation within 1%.
+The first sweep gave an effective gain of 0.66 to 0.74 and CG of 29.6 µV/e⁻, about 27% below the hand calculation, with gain that rose with signal. The cause was a design variable: `sel_hi` was 1.8 V. At SEL = 1.8 V, Msel has only about 51 mV of overdrive, drops 55.7 mV, and passes only 0.51 of the signal from N1 to COL. At 2.5 V the drop is 5.36 mV and the gain is 0.994. After the fix, V_CDS / ΔV_FD = 0.898 and the Q sweep matches the hand calculation within 1%.
 
 ## Hand calculation vs. simulation
 
