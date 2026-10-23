@@ -36,7 +36,7 @@ Charge injection: Q = Iph · (PW + (tr + tf) / 2). With Iph = 0.5 nA, PW = 1 µs
 
 ![pixel_4T schematic](images/01_pixel_4T_schematic.png)
 ![column bias and CDS readout](images/02_column_bias.png)
-![CDS readout](images/03_CDS_readout.png)
+![CDS readout](images/03_cds_readout.png)
 ![testbench](images/04_testbench.png)
 
 ## Timing
