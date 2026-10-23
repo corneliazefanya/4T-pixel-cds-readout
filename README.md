@@ -43,7 +43,9 @@ Charge injection: Q = Iph · (PW + (tr + tf) / 2). With Iph = 0.5 nA, PW = 1 µs
 
 RST (1 to 2 µs), SHR (3 to 4 µs, V1 sampled on the falling edge), charge transfer (5 to 6 µs), SHS (7 to 8 µs, V2 sampled on the falling edge). SEL is held at a constant 2.5 V.
 
-![transient waveforms and timing](images/05_timing_waveforms.png)
+![transient waveforms and timing](images/05a_timing_waveforms.png)
+![transient waveforms and timing](images/05b_timing_waveforms.png)
+![transient waveforms and timing](images/05c_timing_waveforms.png)
 
 Read V_CDS after 8 µs. Between 3 and 7 µs, V_S still holds its initial operating-point value, so the V_CDS trace there is not a signal.
 
